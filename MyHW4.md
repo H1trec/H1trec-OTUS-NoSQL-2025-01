@@ -45,3 +45,16 @@ daemom@OVMCOUCH:~$ sudo docker inspect --format '{{ .NetworkSettings.IPAddress }
 ![DATA](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/data.jpg?raw=true)  
 Выполним запрос:
 ![QUERY](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/query.jpg?raw=true)  
+
+### Отказоустойчивость
+
+Отключаем одну ноду:
+```
+daemom@OVMCOUCH:~$ sudo docker stop db2
+db2
+```
+Видим что в класере нода недоступна:
+![FAIL](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/stop1.jpg?raw=true)  
+Выполняем запрос:
+![QUERY2](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/qw2.jpg?raw=true)  
+Так же в атомате запустилась ребалансировка и проблем с запросами не было. Можно сделать вывод, что кластер в случае отключения однй из нод при должной настройке не потеряет в произвоительности и не допустит потери данных, т.к. произойдет дополнительное реплицирование.
