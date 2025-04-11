@@ -1,0 +1,88 @@
+version: '2'
+
+networks: 
+  main:
+
+services:
+    haproxy:
+        image: haproxy
+        ports:
+            - "9001:9000"
+        volumes:
+            - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+        networks: 
+            - main  
+        depends_on: 
+          - clickhouse1
+          - clickhouse2
+          - clickhouse3
+          - clickhouse4
+    
+    
+    zoo1:
+        image: zookeeper:latest
+        expose:
+            - "2181"
+            - "2888"
+            - "3888"
+        environment:
+            ZOO_MY_ID: "1"
+            ZOO_SERVERS: server.1=0.0.0.0:2888:3888
+        networks: 
+            - main  
+
+    clickhouse1:
+        image: yandex/clickhouse-server
+        expose:
+          #replica sync port
+          - "9010"
+          #client port
+          - "9000"
+        depends_on: 
+          - zoo1
+        volumes:
+          - ./config_1.xml:/etc/clickhouse-server/config.xml
+        networks: 
+            - main  
+          
+    clickhouse2:
+        image: yandex/clickhouse-server
+        expose:
+          #replica sync port
+          - "9011"
+          #client port
+          - "9000"
+        depends_on: 
+          - zoo1
+        volumes:
+          - ./config_2.xml:/etc/clickhouse-server/config.xml
+        networks: 
+            - main  
+
+    clickhouse3:
+        image: yandex/clickhouse-server
+        expose: 
+          #replica sync port
+          - "9012"
+          #client port
+          - "9000"
+        depends_on: 
+          - zoo1
+        volumes:
+          - ./config_3.xml:/etc/clickhouse-server/config.xml
+        networks: 
+            - main  
+
+    clickhouse4:
+        image: yandex/clickhouse-server
+        expose: 
+          #replica sync port
+          - "9013"
+          #client port
+          - "9000"
+        depends_on: 
+          - zoo1
+        volumes:
+          - ./config_4.xml:/etc/clickhouse-server/config.xml
+        networks: 
+            - main 
