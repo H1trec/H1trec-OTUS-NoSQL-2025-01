@@ -30,3 +30,12 @@
 
 === КОНЕЦ ТЕСТОВ ===
 ```
+При этом количество записей строк получилось: 104   
+![STRING](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/STRING.JPG?raw=true)
+Общий размер данных HASH: 48Mb    
+![HASH](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/HASH.JPG?raw=true)
+Общий размер данных SORTED SET: 19Mb    
+![SORTEDSET](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/SORTEDSET.JPG?raw=true)
+Общий размер данных LIST: 37Mb    
+![LIST](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/LIST.JPG?raw=true)
+
