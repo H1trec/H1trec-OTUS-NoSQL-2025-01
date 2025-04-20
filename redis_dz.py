@@ -50,7 +50,7 @@ def main():
         start_iter_time = time.time()
         r.set(f'string_chunk_{idx}', str(chunk))
         iteration_times.append(time.time() - start_iter_time)
-    print(f'[ARRAY OF STRINGS]: Время записи: {sum(iteration_times):.4f} секунд')
+    print(f'[STRINGS]: Время записи: {sum(iteration_times):.4f} секунд')
     print(f'Средняя продолжительность итерации: {sum(iteration_times)/len(iteration_times):.4f} секунд')
 
     # ------- HASH------
@@ -93,7 +93,7 @@ def main():
         start_iter_time = time.time()
         r.get(f'string_chunk_{i}')
         iteration_times.append(time.time() - start_iter_time)
-    print(f'[ARRAY OF STRINGS]: Время чтения: {sum(iteration_times):.4f} секунд')
+    print(f'[STRINGS]: Время чтения: {sum(iteration_times):.4f} секунд')
     print(f'Средняя продолжительность итерации: {sum(iteration_times)/len(iteration_times):.4f} секунд')
 
     # ------- HASH -------
