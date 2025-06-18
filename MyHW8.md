@@ -1,6 +1,6 @@
-#### Etcd
+### Etcd
 
-### Установка 
+#### Установка 
 ```
 daemom@OVMCOUCH:/usr/src/etcd$ sudo docker compose -f docker_compose.yml  up -d
 [+] Running 4/4
@@ -14,7 +14,7 @@ daemom@OVMCOUCH:/usr/src/etcd$ sudo docker compose -f docker_compose.yml  up -d
  ✔ Container etcd2       Started                                                                                   6.7s
  ✔ Container etcd3       Started
 ```
-### Тесирование
+#### Тесирование
 
 Проверка docker:
 ```
@@ -95,7 +95,7 @@ ints=$ENDPOINTS -w tableI have no name!@etcd2:/opt/bitnami/etcd$ etcdctl endpoin
 ```
 Видим, что все ноды работают и мастер нодой осталась нода номер 2.
 
-#### Consul
+### Consul
 
 Установка:  
 ```
