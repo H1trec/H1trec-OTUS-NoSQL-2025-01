@@ -1,0 +1,118 @@
+{
+  "info": {
+    "_postman_id": "11054abb-29a4-879a-f52c-5eb8c56fc401",
+    "name": "ESC",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	"_exporter_id": "78648620"
+  },
+  "item": [
+    {
+      "name": "Create Index",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mappings\": {\n    \"properties\": {\n      \"text\": { \"type\": \"keyword\" }\n    }\n  }\n}\n"
+        },
+        "url": "http://localhost:9200/myindex"
+      },
+      "response": []
+    },
+    {
+      "name": "Add Document1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"моя мама мыла посуду а кот жевал сосиски\"\n}\n"
+        },
+        "url": "http://localhost:9200/myindex/_doc/1"
+      },
+      "response": []
+    },
+    {
+      "name": "Add Document2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"рама была отмыта и вылизана котом\"\n}\n"
+        },
+        "url": "http://localhost:9200/myindex/_doc/2"
+      },
+      "response": []
+    },
+    {
+      "name": "Add Document3",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"мама мыла раму\"\n}\n"
+        },
+        "url": "http://localhost:9200/myindex/_doc/3"
+      },
+      "response": []
+    },
+    {
+      "name": "Search Documents",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": {\n    \"match_all\": {}\n  }\n}\n"
+        },
+        "url": "http://localhost:9200/myindex/_search"
+      },
+      "response": []
+    },
+    {
+      "name": "Fuzzy Search",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": {\n    \"fuzzy\": {\n      \"text\": {\"value\": \"мама ела сосиски\"}\n    }\n  }\n}\n"
+        },
+        "url": "http://localhost:9200/myindex/_search"
+      },
+      "response": []
+    }
+  ]
+}
