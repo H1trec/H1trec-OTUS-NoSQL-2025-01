@@ -1,6 +1,7 @@
 ### Kafka
 
 #### Установка в Docker
+[docker-compose](docker-compose.yml)
 ```
 daemom@OVMCOUCH:/usr/src/kafka$ sudo docker compose -f docker-compose.yml  up -d
 WARN[0000] /usr/src/kafka/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
@@ -30,13 +31,16 @@ Created topic test.
 >message1
 >message2
 ```
+![Python](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/kafka/kafka_send.JPG?raw=true)
 #### Чтением сообщений через kafka-consumer
 ```
 >[root@kafka appuser]# kafka-console-consumer --topic test --from-beginning -\-bootstrap-server localhost:9092
 message1
 message2
 ```
-
+![Python](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/kafka/kafka_rcv.JPG?raw=true)
 #### Отправка и получение сообщений с использованием Python
-
+[Python-код](kafka_main.py)   
+Результать работы скрипта:   
+![Python](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/kafka/kafka_pytnon.JPG?raw=true)
 
