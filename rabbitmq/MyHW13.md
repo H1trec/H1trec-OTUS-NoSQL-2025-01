@@ -1,6 +1,7 @@
 ### RabbitMQ
 
 #### Установка в Docker
+[docker-compose](docker-compose.yml)
 ```
 daemom@OVMCOUCH:/usr/src/rabbitmq$ sudo docker compose -f docker-compose.yml  up -d
 WARN[0000] /usr/src/rabbitmq/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
@@ -23,6 +24,13 @@ CONTAINER ID   IMAGE                   COMMAND                  CREATED         
 873eb7667c6b   rabbitmq:4-management   "docker-entrypoint.s…"   10 seconds ago   Up 7 seconds   4369/tcp, 5671/tcp, 0.0.0.0:5672->5672/tcp, [::]:5672->5672/tcp, 15671/tcp, 15691-15692/tcp, 25672/tcp, 0.0.0.0:15672->15672/tcp, [::]:15672->15672/tcp   rabbitmq-rabbitmq-1
 ```
 
-#### Отправка сообщений в GUI
+#### Отправка и чтение сообщений в GUI
+Пример отправки:   
+![Send_message](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/rabbitmq/message_gui.JPG?raw=true)
+Получение сообщений:   
+![Get_message](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/rabbitmq/get_message_gui.JPG?raw=true)
 
-#### Отправка сообщений через Python
+#### Отправка и чтение сообщений через Python
+[Python-код](rabbit_main.py)   
+Результать работы скрипта:   
+![Python](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/rabbitmq/Python_messages.JPG?raw=true)
