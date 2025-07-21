@@ -1,4 +1,4 @@
-### курсовая работа на тему: "Реализация дашборда в Metabase на Clickhouse."
+### Курсовая работа на тему: "Реализация дашборда в Metabase на Clickhouse."
 
 #### Устанавливаем ПО
 
@@ -965,18 +965,27 @@ Ok.
 
 ##### Создаем подключение к Clickhouse:   
 
-
+![DBConnect](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/Сoursework/DB.JPG?raw=true)
 
 ##### Создаем наборы данных для диаграмм:   
 
 Vaccinations:   
-
+![Vaccinations](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/Сoursework/Vacc.JPG?raw=true)
 
 Hospitalizations:   
-
+![Hospitalizations](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/Сoursework/Hosp.JPG?raw=true)
 
 Demographics:   
-
+![Demographics](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/Сoursework/DemogrJPG.JPG?raw=true)
 
 Epidemiology:   
+![Epidemiology](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/Сoursework/pid.JPG?raw=true)
 
+Health:   
+![Health](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/Сoursework/Healf.JPG?raw=true)
+
+##### Настраиваем Дашборд
+
+![Tab1](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/Сoursework/dashb1.JPG?raw=true)
+![Tab2](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/Сoursework/dashb2.JPG?raw=true)
+![Tab3](https://github.com/H1trec/H1trec-OTUS-NoSQL-2025-01/blob/main/Сoursework/dashb3.JPG?raw=true)
